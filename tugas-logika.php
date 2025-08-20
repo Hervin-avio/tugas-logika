@@ -1,7 +1,7 @@
 <?php
 
 echo "Masukkan nilai: ";
-$nilai = (int) trim(fgets(STDIN)); // ambil input user dan cast jadi integer
+$nilai = (int) trim(fgets(STDIN)); 
 
 if ($nilai >= 0 && $nilai <= 49) {
     echo "E\n";
