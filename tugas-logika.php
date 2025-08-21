@@ -1,6 +1,6 @@
 <?php
 
-function getGrade(int $nilai): string {
+function getGrade(int | float $nilai): string {
     if ($nilai >= 0 && $nilai <= 49) {
         return "E";
     } elseif ($nilai >= 50 && $nilai <= 59) {
@@ -12,7 +12,7 @@ function getGrade(int $nilai): string {
     } elseif ($nilai >= 85 && $nilai <= 100) {
         return "A";
     } else {
-        return "Nilai tidak valid";
+       throw new Exception("Nilai tidak valid");
     }
 }
 
