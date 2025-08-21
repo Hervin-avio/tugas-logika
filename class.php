@@ -4,9 +4,9 @@ class Television {
     public $size;
     public $color;
     public $resolution;   
-    public $price;
+    private $price;
 
-    public function __construct($brand, $size, $color, $resolution, $price) {
+    public function __construct( $brand,  $size,  $color,  $resolution,  $price) {
         $this->brand = $brand;
         $this->size = $size;
         $this->color = $color;
@@ -21,6 +21,27 @@ class Television {
     public function turnOff () {
         echo "oke sudah mati";
     }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function __get($name)
+    {
+        if (property_exists($this, $name)) {
+            return $this->$name;
+        }
+        return null;
+    }
+    
+    public function __set($name, $value)
+    {
+        if (property_exists($this, $name)) {
+            $this->$name = $value;
+        }   
+        return $this;
+    }
+
     
 }
 
@@ -33,5 +54,13 @@ echo "Resolution: " . $Television->resolution . "\n";
 echo "Price: $" . $Television->price . "\n";
 
 
-$Television->turnOn() . "\n";
-$Television->turnOff() . "\n";
+$Television->turnOn();
+echo "\n";
+$Television->turnOff();
+echo "\n";
+
+// Example of using __get and __set
+$Television->brand = "LG";
+echo "Updated Brand: " . $Television->brand . "\n";
+
+
