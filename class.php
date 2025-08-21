@@ -42,7 +42,7 @@ class Television {
         return $this;
     }
 
-    
+
 }
 
 $Television = new Television("Samsung", "55 inch", "Black", "4K", 1500);
@@ -60,7 +60,9 @@ $Television->turnOff();
 echo "\n";
 
 // Example of using __get and __set
-$Television->brand = "LG";
-echo "Updated Brand: " . $Television->brand . "\n";
+$Television->price = 9800;
+echo "Updated Price: " . $Television->price . "\n";
+
+
 
 
